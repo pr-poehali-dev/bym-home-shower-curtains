@@ -48,10 +48,28 @@ const Index = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-90 text-gray-300">
             Превратите ванную в стильное пространство с коллекцией штор BYM HOME
           </p>
-          <div className="flex justify-center">
-            <Button size="lg" className="bg-white hover:bg-gray-100 text-black px-8 py-3 text-lg hover-scale">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex gap-4">
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-lg hover-scale"
+                onClick={() => window.open('https://www.ozon.ru/category/shtory-i-karnizy-dlya-vannoy-15015/bym-home-101109354/', '_blank')}
+              >
+                <Icon name="ShoppingBag" size={20} className="mr-2" />
+                OZON
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 text-lg hover-scale"
+                onClick={() => window.open('https://www.wildberries.ru/brands/11144210-bym-home', '_blank')}
+              >
+                <Icon name="ShoppingBag" size={20} className="mr-2" />
+                Wildberries
+              </Button>
+            </div>
+            <Button size="lg" variant="outline" className="border-gray-500 text-gray-300 hover:bg-gray-800 hover:text-white px-6 py-3 text-lg">
               <Icon name="MessageCircle" size={20} className="mr-2" />
-              Связаться с нами
+              Связаться
             </Button>
           </div>
         </div>
@@ -83,6 +101,34 @@ const Index = () => {
               <p className="text-gray-400">Безопасные для здоровья и экологии</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Marketplaces */}
+      <section className="py-16 bg-gray-950">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-white" style={{fontFamily: 'Montserrat'}}>
+            Наши магазины на <span className="text-gray-400">маркетплейсах</span>
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-md mx-auto">
+            <Button 
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg hover-scale w-full sm:w-auto"
+              onClick={() => window.open('https://www.ozon.ru/category/shtory-i-karnizy-dlya-vannoy-15015/bym-home-101109354/', '_blank')}
+            >
+              <Icon name="ShoppingBag" size={24} className="mr-3" />
+              Купить на OZON
+            </Button>
+            <Button 
+              size="lg" 
+              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg hover-scale w-full sm:w-auto"
+              onClick={() => window.open('https://www.wildberries.ru/brands/11144210-bym-home', '_blank')}
+            >
+              <Icon name="ShoppingBag" size={24} className="mr-3" />
+              Купить на WB
+            </Button>
+          </div>
+          <p className="text-gray-500 mt-6">Быстрая доставка • Гарантия качества • Удобная оплата</p>
         </div>
       </section>
 
@@ -193,17 +239,20 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-white" style={{fontFamily: 'Montserrat'}}>Социальные сети</h4>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                  <Icon name="Instagram" size={20} />
-                </Button>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                  <Icon name="Twitter" size={20} />
-                </Button>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                  <Icon name="Send" size={20} />
-                </Button>
+              <h4 className="text-lg font-semibold mb-4 text-white" style={{fontFamily: 'Montserrat'}}>Наши магазины</h4>
+              <div className="space-y-2">
+                <button 
+                  onClick={() => window.open('https://www.ozon.ru/category/shtory-i-karnizy-dlya-vannoy-15015/bym-home-101109354/', '_blank')}
+                  className="block text-blue-400 hover:text-blue-300 transition-colors text-left"
+                >
+                  OZON Маркетплейс
+                </button>
+                <button 
+                  onClick={() => window.open('https://www.wildberries.ru/brands/11144210-bym-home', '_blank')}
+                  className="block text-purple-400 hover:text-purple-300 transition-colors text-left"
+                >
+                  Wildberries
+                </button>
               </div>
             </div>
           </div>
