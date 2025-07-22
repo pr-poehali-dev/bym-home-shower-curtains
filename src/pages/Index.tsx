@@ -1,38 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Премиум серая штора",
-      price: "2 299 ₽",
-      image: "https://cdn.poehali.dev/files/a3b4ae8f-c0eb-4b62-9987-1424fc261edf.jpg",
-      description: "Элегантная штора из высококачественного материала",
-      badge: "Хит продаж"
-    },
-    {
-      id: 2,
-      name: "Текстурная темная штора",
-      price: "2 599 ₽",
-      image: "https://cdn.poehali.dev/files/a3b4ae8f-c0eb-4b62-9987-1424fc261edf.jpg",
-      description: "Роскошный дизайн с антибактериальным покрытием",
-      badge: "Новинка"
-    },
-    {
-      id: 3,
-      name: "Минималист графит",
-      price: "2 199 ₽",
-      image: "https://cdn.poehali.dev/files/a3b4ae8f-c0eb-4b62-9987-1424fc261edf.jpg",
-      description: "Стильная штора в современном стиле",
-      badge: "Премиум"
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
       {/* Header */}
@@ -46,7 +18,6 @@ const Index = () => {
             />
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#catalog" className="text-gray-300 hover:text-white transition-colors">Каталог</a>
             <a href="#about" className="text-gray-300 hover:text-white transition-colors">О бренде</a>
             <a href="#contacts" className="text-gray-300 hover:text-white transition-colors">Контакты</a>
             <Button className="bg-gray-700 hover:bg-gray-600 text-white">
@@ -77,14 +48,10 @@ const Index = () => {
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto opacity-90 text-gray-300">
             Превратите ванную в стильное пространство с коллекцией штор BYM HOME
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button size="lg" className="bg-white hover:bg-gray-100 text-black px-8 py-3 text-lg hover-scale">
-              <Icon name="Eye" size={20} className="mr-2" />
-              Смотреть каталог
-            </Button>
-            <Button size="lg" variant="outline" className="border-gray-500 text-gray-300 hover:bg-gray-800 hover:text-white px-8 py-3 text-lg">
-              <Icon name="Play" size={20} className="mr-2" />
-              Видео о бренде
+              <Icon name="MessageCircle" size={20} className="mr-2" />
+              Связаться с нами
             </Button>
           </div>
         </div>
@@ -115,57 +82,6 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-2 text-white" style={{fontFamily: 'Montserrat'}}>Эко-материалы</h3>
               <p className="text-gray-400">Безопасные для здоровья и экологии</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Catalog */}
-      <section id="catalog" className="py-20 bg-gray-950">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-white" style={{fontFamily: 'Montserrat'}}>
-              <span className="text-gray-400">Популярные</span> шторы
-            </h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-              Выберите идеальную штору из нашей коллекции премиум качества
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <Card key={product.id} className="group hover-scale transition-all duration-300 hover:shadow-2xl border-gray-800 bg-gray-900" style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <Badge className="absolute top-4 left-4 bg-gray-700 hover:bg-gray-600 text-gray-200">
-                    {product.badge}
-                  </Badge>
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl text-white" style={{fontFamily: 'Montserrat'}}>{product.name}</CardTitle>
-                  <CardDescription className="text-gray-400">{product.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-white" style={{fontFamily: 'Montserrat'}}>{product.price}</span>
-                    <Button className="bg-gray-700 hover:bg-gray-600 text-white">
-                      <Icon name="ShoppingCart" size={16} className="mr-2" />
-                      В корзину
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white px-8">
-              Смотреть весь каталог
-              <Icon name="ArrowRight" size={20} className="ml-2" />
-            </Button>
           </div>
         </div>
       </section>
@@ -222,11 +138,11 @@ const Index = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
-                  <Icon name="Phone" size={24} className="text-gray-300" />
+                  <Icon name="Send" size={24} className="text-gray-300" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white" style={{fontFamily: 'Montserrat'}}>Телефон</h3>
-                  <p className="text-gray-400">+7 (495) 123-45-67</p>
+                  <h3 className="font-semibold text-white" style={{fontFamily: 'Montserrat'}}>Telegram</h3>
+                  <p className="text-gray-400">@BYM_HOME</p>
                 </div>
               </div>
               
@@ -236,17 +152,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white" style={{fontFamily: 'Montserrat'}}>Email</h3>
-                  <p className="text-gray-400">info@bymhome.ru</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
-                  <Icon name="MapPin" size={24} className="text-gray-300" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white" style={{fontFamily: 'Montserrat'}}>Адрес</h3>
-                  <p className="text-gray-400">Москва, ул. Примерная, 123</p>
+                  <p className="text-gray-400">bymhome@mail.ru</p>
                 </div>
               </div>
             </div>
@@ -254,7 +160,7 @@ const Index = () => {
             <Card className="border-gray-800 bg-gray-900 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-white" style={{fontFamily: 'Montserrat'}}>Отправить сообщение</CardTitle>
-                <CardDescription className="text-gray-400">Мы перезвоним в течение часа</CardDescription>
+                <CardDescription className="text-gray-400">Мы ответим в течение дня</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Input placeholder="Ваше имя" className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500" />
@@ -274,7 +180,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-black text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <img 
@@ -287,26 +193,16 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-white" style={{fontFamily: 'Montserrat'}}>Каталог</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Шторы для ванной</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Аксессуары</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Новинки</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Распродажа</a></li>
-              </ul>
-            </div>
-            
-            <div>
               <h4 className="text-lg font-semibold mb-4 text-white" style={{fontFamily: 'Montserrat'}}>Социальные сети</h4>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
                   <Icon name="Instagram" size={20} />
                 </Button>
                 <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                  <Icon name="Facebook" size={20} />
+                  <Icon name="Twitter" size={20} />
                 </Button>
                 <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                  <Icon name="Twitter" size={20} />
+                  <Icon name="Send" size={20} />
                 </Button>
               </div>
             </div>
